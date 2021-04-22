@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E6FD350926308D4E00EC3A0C /* FilmsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD350826308D4E00EC3A0C /* FilmsListViewController.swift */; };
+		E6FD350F26308DCC00EC3A0C /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD350E26308DCC00EC3A0C /* FilmCell.swift */; };
+		E6FD351826308E6400EC3A0C /* FilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FD351726308E6400EC3A0C /* FilmCell.xib */; };
+		E6FD351D2630922800EC3A0C /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD351C2630922800EC3A0C /* FileManagerExtension.swift */; };
+		E6FD35222630A0D000EC3A0C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35212630A0D000EC3A0C /* WebService.swift */; };
+		E6FD35322630A7C400EC3A0C /* FilmsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35312630A7C400EC3A0C /* FilmsMapViewController.swift */; };
+		E6FD353F2630C16900EC3A0C /* Films.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FD353E2630C16900EC3A0C /* Films.storyboard */; };
+		E6FD35442630C57C00EC3A0C /* FilmDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35432630C57C00EC3A0C /* FilmDetailsViewController.swift */; };
+		E6FD354D2630CA9100EC3A0C /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD354C2630CA9100EC3A0C /* LocationAnnotation.swift */; };
+		E6FD35582630D3B200EC3A0C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35572630D3B200EC3A0C /* Pagination.swift */; };
+		E6FD355D2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD355C2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift */; };
+		E6FD35632631C17300EC3A0C /* ImdbFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35622631C17200EC3A0C /* ImdbFilm.swift */; };
+		E6FD35682631C45900EC3A0C /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35672631C45900EC3A0C /* ImageCache.swift */; };
+		E6FFA093262F37B8006099AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FFA092262F37B8006099AF /* AppDelegate.swift */; };
+		E6FFA095262F37B8006099AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FFA094262F37B8006099AF /* SceneDelegate.swift */; };
+		E6FFA09A262F37B8006099AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FFA098262F37B8006099AF /* Main.storyboard */; };
+		E6FFA09C262F37BA006099AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FFA09B262F37BA006099AF /* Assets.xcassets */; };
+		E6FFA09F262F37BA006099AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FFA09D262F37BA006099AF /* LaunchScreen.storyboard */; };
+		E6FFA0AA262F37BA006099AF /* NetflixFilmingLocationsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FFA0A9262F37BA006099AF /* NetflixFilmingLocationsAppTests.swift */; };
+		E6FFA0B5262F37BA006099AF /* NetflixFilmingLocationsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FFA0B4262F37BA006099AF /* NetflixFilmingLocationsAppUITests.swift */; };
+		E6FFA0C7262F37FD006099AF /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FFA0C6262F37FD006099AF /* CodableExtension.swift */; };
+		E6FFA0D4262F382B006099AF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FFA0D3262F382B006099AF /* Film.swift */; };
+		E6FFA0DC262F38C1006099AF /* FilmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FFA0DB262F38C1006099AF /* FilmManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6FFA0A6262F37BA006099AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6FFA087262F37B8006099AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6FFA08E262F37B8006099AF;
+			remoteInfo = NetflixFilmingLocationsApp;
+		};
+		E6FFA0B1262F37BA006099AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6FFA087262F37B8006099AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6FFA08E262F37B8006099AF;
+			remoteInfo = NetflixFilmingLocationsApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E6FD350826308D4E00EC3A0C /* FilmsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsListViewController.swift; sourceTree = "<group>"; };
+		E6FD350E26308DCC00EC3A0C /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
+		E6FD351726308E6400EC3A0C /* FilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCell.xib; sourceTree = "<group>"; };
+		E6FD351C2630922800EC3A0C /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
+		E6FD35212630A0D000EC3A0C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		E6FD35312630A7C400EC3A0C /* FilmsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsMapViewController.swift; sourceTree = "<group>"; };
+		E6FD353E2630C16900EC3A0C /* Films.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Films.storyboard; sourceTree = "<group>"; };
+		E6FD35432630C57C00EC3A0C /* FilmDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailsViewController.swift; sourceTree = "<group>"; };
+		E6FD354C2630CA9100EC3A0C /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
+		E6FD35572630D3B200EC3A0C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		E6FD355C2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExtension.swift; sourceTree = "<group>"; };
+		E6FD35622631C17200EC3A0C /* ImdbFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImdbFilm.swift; sourceTree = "<group>"; };
+		E6FD35672631C45900EC3A0C /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		E6FFA08F262F37B8006099AF /* NetflixFilmingLocationsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixFilmingLocationsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6FFA092262F37B8006099AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E6FFA094262F37B8006099AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E6FFA099262F37B8006099AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E6FFA09B262F37BA006099AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6FFA09E262F37BA006099AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E6FFA0A0262F37BA006099AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6FFA0A5262F37BA006099AF /* NetflixFilmingLocationsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetflixFilmingLocationsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6FFA0A9262F37BA006099AF /* NetflixFilmingLocationsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixFilmingLocationsAppTests.swift; sourceTree = "<group>"; };
+		E6FFA0AB262F37BA006099AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6FFA0B0262F37BA006099AF /* NetflixFilmingLocationsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetflixFilmingLocationsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6FFA0B4262F37BA006099AF /* NetflixFilmingLocationsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixFilmingLocationsAppUITests.swift; sourceTree = "<group>"; };
+		E6FFA0B6262F37BA006099AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6FFA0C6262F37FD006099AF /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
+		E6FFA0D3262F382B006099AF /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		E6FFA0DB262F38C1006099AF /* FilmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6FFA08C262F37B8006099AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FFA0A2262F37BA006099AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FFA0AD262F37BA006099AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6FD350D26308DC100EC3A0C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD350E26308DCC00EC3A0C /* FilmCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E6FD351626308E5600EC3A0C /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD351726308E6400EC3A0C /* FilmCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		E6FD354B2630CA8100EC3A0C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6FFA0D3262F382B006099AF /* Film.swift */,
+				E6FD354C2630CA9100EC3A0C /* LocationAnnotation.swift */,
+				E6FD35622631C17200EC3A0C /* ImdbFilm.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E6FFA086262F37B8006099AF = {
+			isa = PBXGroup;
+			children = (
+				E6FFA091262F37B8006099AF /* NetflixFilmingLocationsApp */,
+				E6FFA0A8262F37BA006099AF /* NetflixFilmingLocationsAppTests */,
+				E6FFA0B3262F37BA006099AF /* NetflixFilmingLocationsAppUITests */,
+				E6FFA090262F37B8006099AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6FFA090262F37B8006099AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6FFA08F262F37B8006099AF /* NetflixFilmingLocationsApp.app */,
+				E6FFA0A5262F37BA006099AF /* NetflixFilmingLocationsAppTests.xctest */,
+				E6FFA0B0262F37BA006099AF /* NetflixFilmingLocationsAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6FFA091262F37B8006099AF /* NetflixFilmingLocationsApp */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD354B2630CA8100EC3A0C /* Models */,
+				E6FD351626308E5600EC3A0C /* Xibs */,
+				E6FD350D26308DC100EC3A0C /* Views */,
+				E6FFA0C5262F37EB006099AF /* Supporting Files */,
+				E6FFA092262F37B8006099AF /* AppDelegate.swift */,
+				E6FFA094262F37B8006099AF /* SceneDelegate.swift */,
+				E6FFA098262F37B8006099AF /* Main.storyboard */,
+				E6FFA09B262F37BA006099AF /* Assets.xcassets */,
+				E6FFA09D262F37BA006099AF /* LaunchScreen.storyboard */,
+				E6FFA0A0262F37BA006099AF /* Info.plist */,
+				E6FFA0DB262F38C1006099AF /* FilmManager.swift */,
+				E6FD350826308D4E00EC3A0C /* FilmsListViewController.swift */,
+				E6FD35312630A7C400EC3A0C /* FilmsMapViewController.swift */,
+				E6FD353E2630C16900EC3A0C /* Films.storyboard */,
+				E6FD35432630C57C00EC3A0C /* FilmDetailsViewController.swift */,
+			);
+			path = NetflixFilmingLocationsApp;
+			sourceTree = "<group>";
+		};
+		E6FFA0A8262F37BA006099AF /* NetflixFilmingLocationsAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6FFA0A9262F37BA006099AF /* NetflixFilmingLocationsAppTests.swift */,
+				E6FFA0AB262F37BA006099AF /* Info.plist */,
+			);
+			path = NetflixFilmingLocationsAppTests;
+			sourceTree = "<group>";
+		};
+		E6FFA0B3262F37BA006099AF /* NetflixFilmingLocationsAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E6FFA0B4262F37BA006099AF /* NetflixFilmingLocationsAppUITests.swift */,
+				E6FFA0B6262F37BA006099AF /* Info.plist */,
+			);
+			path = NetflixFilmingLocationsAppUITests;
+			sourceTree = "<group>";
+		};
+		E6FFA0C5262F37EB006099AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6FFA0C6262F37FD006099AF /* CodableExtension.swift */,
+				E6FD351C2630922800EC3A0C /* FileManagerExtension.swift */,
+				E6FD35212630A0D000EC3A0C /* WebService.swift */,
+				E6FD35572630D3B200EC3A0C /* Pagination.swift */,
+				E6FD355C2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift */,
+				E6FD35672631C45900EC3A0C /* ImageCache.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6FFA08E262F37B8006099AF /* NetflixFilmingLocationsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6FFA0B9262F37BA006099AF /* Build configuration list for PBXNativeTarget "NetflixFilmingLocationsApp" */;
+			buildPhases = (
+				E6FFA08B262F37B8006099AF /* Sources */,
+				E6FFA08C262F37B8006099AF /* Frameworks */,
+				E6FFA08D262F37B8006099AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetflixFilmingLocationsApp;
+			productName = NetflixFilmingLocationsApp;
+			productReference = E6FFA08F262F37B8006099AF /* NetflixFilmingLocationsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E6FFA0A4262F37BA006099AF /* NetflixFilmingLocationsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6FFA0BC262F37BA006099AF /* Build configuration list for PBXNativeTarget "NetflixFilmingLocationsAppTests" */;
+			buildPhases = (
+				E6FFA0A1262F37BA006099AF /* Sources */,
+				E6FFA0A2262F37BA006099AF /* Frameworks */,
+				E6FFA0A3262F37BA006099AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6FFA0A7262F37BA006099AF /* PBXTargetDependency */,
+			);
+			name = NetflixFilmingLocationsAppTests;
+			productName = NetflixFilmingLocationsAppTests;
+			productReference = E6FFA0A5262F37BA006099AF /* NetflixFilmingLocationsAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E6FFA0AF262F37BA006099AF /* NetflixFilmingLocationsAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6FFA0BF262F37BA006099AF /* Build configuration list for PBXNativeTarget "NetflixFilmingLocationsAppUITests" */;
+			buildPhases = (
+				E6FFA0AC262F37BA006099AF /* Sources */,
+				E6FFA0AD262F37BA006099AF /* Frameworks */,
+				E6FFA0AE262F37BA006099AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6FFA0B2262F37BA006099AF /* PBXTargetDependency */,
+			);
+			name = NetflixFilmingLocationsAppUITests;
+			productName = NetflixFilmingLocationsAppUITests;
+			productReference = E6FFA0B0262F37BA006099AF /* NetflixFilmingLocationsAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6FFA087262F37B8006099AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					E6FFA08E262F37B8006099AF = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					E6FFA0A4262F37BA006099AF = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = E6FFA08E262F37B8006099AF;
+					};
+					E6FFA0AF262F37BA006099AF = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = E6FFA08E262F37B8006099AF;
+					};
+				};
+			};
+			buildConfigurationList = E6FFA08A262F37B8006099AF /* Build configuration list for PBXProject "NetflixFilmingLocationsApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6FFA086262F37B8006099AF;
+			productRefGroup = E6FFA090262F37B8006099AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6FFA08E262F37B8006099AF /* NetflixFilmingLocationsApp */,
+				E6FFA0A4262F37BA006099AF /* NetflixFilmingLocationsAppTests */,
+				E6FFA0AF262F37BA006099AF /* NetflixFilmingLocationsAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6FFA08D262F37B8006099AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6FFA09F262F37BA006099AF /* LaunchScreen.storyboard in Resources */,
+				E6FD351826308E6400EC3A0C /* FilmCell.xib in Resources */,
+				E6FFA09C262F37BA006099AF /* Assets.xcassets in Resources */,
+				E6FFA09A262F37B8006099AF /* Main.storyboard in Resources */,
+				E6FD353F2630C16900EC3A0C /* Films.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FFA0A3262F37BA006099AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FFA0AE262F37BA006099AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6FFA08B262F37B8006099AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6FD350926308D4E00EC3A0C /* FilmsListViewController.swift in Sources */,
+				E6FD351D2630922800EC3A0C /* FileManagerExtension.swift in Sources */,
+				E6FD35682631C45900EC3A0C /* ImageCache.swift in Sources */,
+				E6FFA0C7262F37FD006099AF /* CodableExtension.swift in Sources */,
+				E6FD355D2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift in Sources */,
+				E6FD35442630C57C00EC3A0C /* FilmDetailsViewController.swift in Sources */,
+				E6FFA093262F37B8006099AF /* AppDelegate.swift in Sources */,
+				E6FFA0D4262F382B006099AF /* Film.swift in Sources */,
+				E6FD35322630A7C400EC3A0C /* FilmsMapViewController.swift in Sources */,
+				E6FD350F26308DCC00EC3A0C /* FilmCell.swift in Sources */,
+				E6FFA095262F37B8006099AF /* SceneDelegate.swift in Sources */,
+				E6FD35632631C17300EC3A0C /* ImdbFilm.swift in Sources */,
+				E6FD35222630A0D000EC3A0C /* WebService.swift in Sources */,
+				E6FD354D2630CA9100EC3A0C /* LocationAnnotation.swift in Sources */,
+				E6FFA0DC262F38C1006099AF /* FilmManager.swift in Sources */,
+				E6FD35582630D3B200EC3A0C /* Pagination.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FFA0A1262F37BA006099AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6FFA0AA262F37BA006099AF /* NetflixFilmingLocationsAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FFA0AC262F37BA006099AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6FFA0B5262F37BA006099AF /* NetflixFilmingLocationsAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6FFA0A7262F37BA006099AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6FFA08E262F37B8006099AF /* NetflixFilmingLocationsApp */;
+			targetProxy = E6FFA0A6262F37BA006099AF /* PBXContainerItemProxy */;
+		};
+		E6FFA0B2262F37BA006099AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6FFA08E262F37B8006099AF /* NetflixFilmingLocationsApp */;
+			targetProxy = E6FFA0B1262F37BA006099AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6FFA098262F37B8006099AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6FFA099262F37B8006099AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E6FFA09D262F37BA006099AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6FFA09E262F37BA006099AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6FFA0B7262F37BA006099AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E6FFA0B8262F37BA006099AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6FFA0BA262F37BA006099AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X97289P8XK;
+				INFOPLIST_FILE = NetflixFilmingLocationsApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eann.NetflixFilmingLocationsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6FFA0BB262F37BA006099AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X97289P8XK;
+				INFOPLIST_FILE = NetflixFilmingLocationsApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eann.NetflixFilmingLocationsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E6FFA0BD262F37BA006099AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X97289P8XK;
+				INFOPLIST_FILE = NetflixFilmingLocationsAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eann.NetflixFilmingLocationsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetflixFilmingLocationsApp.app/NetflixFilmingLocationsApp";
+			};
+			name = Debug;
+		};
+		E6FFA0BE262F37BA006099AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X97289P8XK;
+				INFOPLIST_FILE = NetflixFilmingLocationsAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eann.NetflixFilmingLocationsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetflixFilmingLocationsApp.app/NetflixFilmingLocationsApp";
+			};
+			name = Release;
+		};
+		E6FFA0C0262F37BA006099AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X97289P8XK;
+				INFOPLIST_FILE = NetflixFilmingLocationsAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eann.NetflixFilmingLocationsAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NetflixFilmingLocationsApp;
+			};
+			name = Debug;
+		};
+		E6FFA0C1262F37BA006099AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X97289P8XK;
+				INFOPLIST_FILE = NetflixFilmingLocationsAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eann.NetflixFilmingLocationsAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NetflixFilmingLocationsApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6FFA08A262F37B8006099AF /* Build configuration list for PBXProject "NetflixFilmingLocationsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6FFA0B7262F37BA006099AF /* Debug */,
+				E6FFA0B8262F37BA006099AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6FFA0B9262F37BA006099AF /* Build configuration list for PBXNativeTarget "NetflixFilmingLocationsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6FFA0BA262F37BA006099AF /* Debug */,
+				E6FFA0BB262F37BA006099AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6FFA0BC262F37BA006099AF /* Build configuration list for PBXNativeTarget "NetflixFilmingLocationsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6FFA0BD262F37BA006099AF /* Debug */,
+				E6FFA0BE262F37BA006099AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6FFA0BF262F37BA006099AF /* Build configuration list for PBXNativeTarget "NetflixFilmingLocationsAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6FFA0C0262F37BA006099AF /* Debug */,
+				E6FFA0C1262F37BA006099AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6FFA087262F37B8006099AF /* Project object */;
+}
