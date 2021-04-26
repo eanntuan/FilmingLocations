@@ -21,6 +21,8 @@ class FilmsListViewController: UIViewController {
   var films = [Film]()
   var filteredFilms = [Film]()
   
+  var filmObserver: Any?
+  
   let searchController = UISearchController(searchResultsController: nil)
   var isSearchBarEmpty: Bool {
     return searchController.searchBar.text?.isEmpty ?? true
@@ -29,7 +31,6 @@ class FilmsListViewController: UIViewController {
     return searchController.isActive && !isSearchBarEmpty
   }
   var segmentedController: UISegmentedControl!
-  //  var businessContainerVC: BusinessesContainerVC?
   
   // MARK: Lifecycle
   
@@ -38,8 +39,10 @@ class FilmsListViewController: UIViewController {
     setupVCViews()
     setupDelegates()
     films = FilmManager.shared.films
-    if films.isEmpty {
-      getLatestFilms()
+    films.isEmpty ? FilmManager.shared.getFilms() : nil
+    filmObserver = NotificationCenter.default.addObserver(forName: .DidGetFilms, object: nil, queue: .main) { [weak self] (_) in
+      self?.films = FilmManager.shared.films
+      self?.reloadData()
     }
   }
   
@@ -54,30 +57,18 @@ class FilmsListViewController: UIViewController {
   
   fileprivate func setupVCViews() {
     tableViewSetup()
-    addFooterView()
-    footerViewSetup()
     setupSearchBar()
     setupNavigation()
   }
   
   fileprivate func tableViewSetup() {
     tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 100
+    tableView.estimatedRowHeight = 170
     tableView.register(UINib(nibName: "FilmCell", bundle: nil), forCellReuseIdentifier: "filmCell")
   }
   
   func setupNavigation() {
-    
-  }
-  
-  /// Footer view for activity indicator (infinite scrolling)
-  fileprivate func addFooterView() {
-    footerActivityIndicatorView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50))
-    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
-    activityIndicatorView.center = footerActivityIndicatorView.center
-    activityIndicatorView.startAnimating()
-    footerActivityIndicatorView.addSubview(activityIndicatorView)
-    tableView.tableFooterView = footerActivityIndicatorView
+    navigationController?.navigationBar.prefersLargeTitles = true
   }
   
   func setupSearchBar() {
@@ -91,6 +82,10 @@ class FilmsListViewController: UIViewController {
     segmentedController = UISegmentedControl(items: titles)
     segmentedController.addTarget(self, action: #selector(handleSort), for: .allEvents)
     segmentedController.selectedSegmentIndex = 0
+    segmentedController.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+    segmentedController.tintColor = .lightGray
+    segmentedController.selectedSegmentTintColor = UIColor.black
+    segmentedController.layer.borderWidth = 1
     navigationItem.titleView = segmentedController
   }
   
@@ -99,15 +94,6 @@ class FilmsListViewController: UIViewController {
     let type = FilmSort.allCases[index]
     films = FilmManager.shared.sortFilms(by: type)
     reloadData()
-  }
-  
-  private func getLatestFilms() {
-    WebService().getFilms { response, error in
-      if let films = response {
-        self.films = films
-        self.reloadData()
-      }
-    }
   }
   
   func filterContentForSearchText(_ searchText: String) {
@@ -132,37 +118,17 @@ class FilmsListViewController: UIViewController {
     let film = displayedFilms[indexPath.row]
     if let filmImage = FilmManager.shared.imdbFilmsDict[film.title]?.poster, let imageUrl = URL(string: filmImage) {
       ImageCache.shared.image(url: imageUrl) { (image) in
-        if cell.film?.title == film.title {
+        if cell.film?.title == film.title, let image = image {
           DispatchQueue.main.async {
-            cell.imageView?.image = nil
-            cell.imageView?.image = image ?? nil
+            cell.setImage(image)
           }
         }
       }
-    } else {
+    } else if let image = UIImage.defaultImageIcon {
+      DispatchQueue.main.async {
+        cell.setImage(image)
+      }
       print("error loading image for \(film.title)")
-    }
-  }
-}
-
-// MARK: - Infinite scrolling
-
-extension FilmsListViewController: UIScrollViewDelegate {
-  
-  fileprivate func footerViewSetup() {
-    if tableView.contentOffset.y > tableView.contentSize.height - tableView.bounds.height - 55 && tableView.isDragging {
-      footerActivityIndicatorView.isHidden = false
-    } else {
-      footerActivityIndicatorView.isHidden = true
-    }
-  }
-  
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    footerViewSetup()
-    guard !isDownloadingMoreData else { return }
-    if scrollView.contentOffset.y > scrollView.contentSize.height - tableView.bounds.height && tableView.isDragging {
-      isDownloadingMoreData = true
-      //            self.businessContainerVC?.performMoreSearch()
     }
   }
 }
@@ -172,27 +138,40 @@ extension FilmsListViewController: UIScrollViewDelegate {
 extension FilmsListViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    tableView.tableFooterView?.isHidden = !(films.count > 0)
-    footerViewSetup()
     return isFiltering ? filteredFilms.count : films.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "filmCell") as? FilmCell else { return UITableViewCell() }
     let film = isFiltering ? filteredFilms[indexPath.row] : films[indexPath.row]
+    cell.clearImage()
+    if let details = FilmManager.shared.imdbFilmsDict[film.title] {
+      cell.filmDetails = details
+    }
     cell.configure(film, index: indexPath)
     self.updateImage(tableView: tableView, cell: cell, indexPath: indexPath)
     return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let cell = tableView.cellForRow(at: indexPath) as? FilmCell else { return }
     tableView.deselectRow(at: indexPath, animated: false)
     let film = isFiltering ? filteredFilms[indexPath.row] : films[indexPath.row]
-    if let filmDetailVC = UIStoryboard(name: "Films", bundle: nil).instantiateViewController(withIdentifier: "FilmDetailsViewController") as? FilmDetailsViewController {
+    if let filmDetailVC = UIStoryboard(name: "Films", bundle: nil).instantiateViewController(withIdentifier: "FilmDetailsCollectionViewController") as? FilmDetailsCollectionViewController {
       filmDetailVC.film = film
+      filmDetailVC.image = cell.posterImage ?? .defaultImageIcon
+      
+      if let details = FilmManager.shared.imdbFilmsDict[film.title] {
+        filmDetailVC.filmDetails = details
+      }
       self.navigationController?.pushViewController(filmDetailVC, animated: true)
     }
   }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 170
+  }
+  
 }
 
 extension FilmsListViewController: UISearchResultsUpdating {

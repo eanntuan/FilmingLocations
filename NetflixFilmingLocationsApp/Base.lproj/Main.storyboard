@@ -9,7 +9,7 @@
         <!--Root Tab Bar Controller-->
         <scene sceneID="BiS-tw-ZQb">
             <objects>
-                <tabBarController id="8NC-hz-mfx" customClass="RootTabBarController" customModule="wolf_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="8NC-hz-mfx" customClass="RootTabBarController" customModule="NetflixFilmingLocationsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aqX-aI-vfH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -37,10 +37,10 @@
         <!--FilmsMapNavigationController-->
         <scene sceneID="nHG-uA-aXh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IcE-Qd-gqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="FilmsMapViewController" storyboardName="Films" referencedIdentifier="FilmsMapNavigationController" id="sJA-PK-SXZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" selectedImage="mappin" catalog="system" id="hXZ-eM-7Aj"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcE-Qd-gqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2651" y="885"/>
         </scene>

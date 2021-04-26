@@ -69,17 +69,24 @@ class ImageCache: NSCache<NSString, UIImage> {
       return
     }
     
-    WebService.fetchImage(url) { (image, error) in
-      if error != nil {
-        print("error downloading image \(String(describing: url))")
-        completion(nil)
-      }
+    downloadImage(from: url) { image in
       guard let image = image else {
         completion(nil)
         return
       }
       self.cache(image: image, key: key)
       completion(image)
+    }
+  }
+  
+  func downloadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+    print("Download Started")
+    WebService().getData(from: url) { data, response, error in
+      guard let data = data, error == nil else { return }
+      print(response?.suggestedFilename ?? url.lastPathComponent)
+      print("Download Finished")
+      // always update the UI from the main thread
+      completion(UIImage(data: data))
     }
   }
 }
@@ -95,4 +102,8 @@ extension String {
       .components(separatedBy: invalidCharacters)
       .joined(separator: "")
   }
+}
+
+extension UIImage {
+  static var defaultImageIcon = UIImage(named: "comingSoonImage")
 }

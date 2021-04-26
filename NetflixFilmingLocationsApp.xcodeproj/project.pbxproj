@@ -7,17 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E601CBC22635F7D10013E6F3 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601CBC12635F7D10013E6F3 /* DetailHeaderView.swift */; };
+		E601CBE42636067B0013E6F3 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601CBE32636067B0013E6F3 /* FilmCell.swift */; };
+		E601CBE92636068A0013E6F3 /* FilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E601CBE8263606890013E6F3 /* FilmCell.xib */; };
+		E651513D2634C91500F026CD /* FilmDetailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E651513C2634C91500F026CD /* FilmDetailsCollectionViewController.swift */; };
+		E65151422634C99900F026CD /* FilmDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65151412634C99900F026CD /* FilmDetailItem.swift */; };
+		E65151472634CB9400F026CD /* FilmDetailsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65151462634CB9400F026CD /* FilmDetailsHeaderCell.xib */; };
+		E651514C2634CC1C00F026CD /* FilmDetailsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E651514B2634CC1C00F026CD /* FilmDetailsHeaderCell.swift */; };
+		E65151542634CE9200F026CD /* NibLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65151532634CE9200F026CD /* NibLoadedView.swift */; };
+		E65151622634D25900F026CD /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65151612634D25900F026CD /* UICollectionViewExtension.swift */; };
+		E65151682634D29000F026CD /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65151672634D29000F026CD /* ReusableView.swift */; };
+		E65151742634D54A00F026CD /* FilmLocationMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65151732634D54A00F026CD /* FilmLocationMapCell.xib */; };
+		E65151792634D57400F026CD /* FilmLocationMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65151782634D57400F026CD /* FilmLocationMapCell.swift */; };
+		E65151812634D6D900F026CD /* PlotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65151802634D6D900F026CD /* PlotCell.xib */; };
+		E65151862634D6F800F026CD /* PlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65151852634D6F800F026CD /* PlotCell.swift */; };
+		E6626A94263210100053CA42 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6626A93263210100053CA42 /* LocationCell.swift */; };
+		E6626A99263210340053CA42 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6626A98263210340053CA42 /* LocationCell.xib */; };
 		E6FD350926308D4E00EC3A0C /* FilmsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD350826308D4E00EC3A0C /* FilmsListViewController.swift */; };
-		E6FD350F26308DCC00EC3A0C /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD350E26308DCC00EC3A0C /* FilmCell.swift */; };
-		E6FD351826308E6400EC3A0C /* FilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FD351726308E6400EC3A0C /* FilmCell.xib */; };
 		E6FD351D2630922800EC3A0C /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD351C2630922800EC3A0C /* FileManagerExtension.swift */; };
 		E6FD35222630A0D000EC3A0C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35212630A0D000EC3A0C /* WebService.swift */; };
 		E6FD35322630A7C400EC3A0C /* FilmsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35312630A7C400EC3A0C /* FilmsMapViewController.swift */; };
 		E6FD353F2630C16900EC3A0C /* Films.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FD353E2630C16900EC3A0C /* Films.storyboard */; };
-		E6FD35442630C57C00EC3A0C /* FilmDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35432630C57C00EC3A0C /* FilmDetailsViewController.swift */; };
 		E6FD354D2630CA9100EC3A0C /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD354C2630CA9100EC3A0C /* LocationAnnotation.swift */; };
-		E6FD35582630D3B200EC3A0C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35572630D3B200EC3A0C /* Pagination.swift */; };
-		E6FD355D2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD355C2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift */; };
 		E6FD35632631C17300EC3A0C /* ImdbFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35622631C17200EC3A0C /* ImdbFilm.swift */; };
 		E6FD35682631C45900EC3A0C /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD35672631C45900EC3A0C /* ImageCache.swift */; };
 		E6FFA093262F37B8006099AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FFA092262F37B8006099AF /* AppDelegate.swift */; };
@@ -50,17 +61,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E601CBC12635F7D10013E6F3 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		E601CBE32636067B0013E6F3 /* FilmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
+		E601CBE8263606890013E6F3 /* FilmCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilmCell.xib; sourceTree = "<group>"; };
+		E651513C2634C91500F026CD /* FilmDetailsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailsCollectionViewController.swift; sourceTree = "<group>"; };
+		E65151412634C99900F026CD /* FilmDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailItem.swift; sourceTree = "<group>"; };
+		E65151462634CB9400F026CD /* FilmDetailsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmDetailsHeaderCell.xib; sourceTree = "<group>"; };
+		E651514B2634CC1C00F026CD /* FilmDetailsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailsHeaderCell.swift; sourceTree = "<group>"; };
+		E65151532634CE9200F026CD /* NibLoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadedView.swift; sourceTree = "<group>"; };
+		E65151612634D25900F026CD /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		E65151672634D29000F026CD /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		E65151732634D54A00F026CD /* FilmLocationMapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmLocationMapCell.xib; sourceTree = "<group>"; };
+		E65151782634D57400F026CD /* FilmLocationMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmLocationMapCell.swift; sourceTree = "<group>"; };
+		E65151802634D6D900F026CD /* PlotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlotCell.xib; sourceTree = "<group>"; };
+		E65151852634D6F800F026CD /* PlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotCell.swift; sourceTree = "<group>"; };
+		E6626A93263210100053CA42 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		E6626A98263210340053CA42 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		E6FD350826308D4E00EC3A0C /* FilmsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsListViewController.swift; sourceTree = "<group>"; };
-		E6FD350E26308DCC00EC3A0C /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
-		E6FD351726308E6400EC3A0C /* FilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCell.xib; sourceTree = "<group>"; };
 		E6FD351C2630922800EC3A0C /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		E6FD35212630A0D000EC3A0C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		E6FD35312630A7C400EC3A0C /* FilmsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsMapViewController.swift; sourceTree = "<group>"; };
 		E6FD353E2630C16900EC3A0C /* Films.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Films.storyboard; sourceTree = "<group>"; };
-		E6FD35432630C57C00EC3A0C /* FilmDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailsViewController.swift; sourceTree = "<group>"; };
 		E6FD354C2630CA9100EC3A0C /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
-		E6FD35572630D3B200EC3A0C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
-		E6FD355C2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExtension.swift; sourceTree = "<group>"; };
 		E6FD35622631C17200EC3A0C /* ImdbFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImdbFilm.swift; sourceTree = "<group>"; };
 		E6FD35672631C45900EC3A0C /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		E6FFA08F262F37B8006099AF /* NetflixFilmingLocationsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixFilmingLocationsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,10 +128,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E65151662634D27E00F026CD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E65151532634CE9200F026CD /* NibLoadedView.swift */,
+				E65151672634D29000F026CD /* ReusableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E651516F2634D2B200F026CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E6FFA0C6262F37FD006099AF /* CodableExtension.swift */,
+				E65151612634D25900F026CD /* UICollectionViewExtension.swift */,
+				E6FD351C2630922800EC3A0C /* FileManagerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E6FD350D26308DC100EC3A0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E6FD350E26308DCC00EC3A0C /* FilmCell.swift */,
+				E601CBE32636067B0013E6F3 /* FilmCell.swift */,
+				E6626A93263210100053CA42 /* LocationCell.swift */,
+				E651514B2634CC1C00F026CD /* FilmDetailsHeaderCell.swift */,
+				E65151782634D57400F026CD /* FilmLocationMapCell.swift */,
+				E65151852634D6F800F026CD /* PlotCell.swift */,
+				E601CBC12635F7D10013E6F3 /* DetailHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,7 +163,11 @@
 		E6FD351626308E5600EC3A0C /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				E6FD351726308E6400EC3A0C /* FilmCell.xib */,
+				E65151732634D54A00F026CD /* FilmLocationMapCell.xib */,
+				E6626A98263210340053CA42 /* LocationCell.xib */,
+				E65151462634CB9400F026CD /* FilmDetailsHeaderCell.xib */,
+				E601CBE8263606890013E6F3 /* FilmCell.xib */,
+				E65151802634D6D900F026CD /* PlotCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -128,6 +178,7 @@
 				E6FFA0D3262F382B006099AF /* Film.swift */,
 				E6FD354C2630CA9100EC3A0C /* LocationAnnotation.swift */,
 				E6FD35622631C17200EC3A0C /* ImdbFilm.swift */,
+				E65151412634C99900F026CD /* FilmDetailItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,9 +218,9 @@
 				E6FFA0A0262F37BA006099AF /* Info.plist */,
 				E6FFA0DB262F38C1006099AF /* FilmManager.swift */,
 				E6FD350826308D4E00EC3A0C /* FilmsListViewController.swift */,
+				E651513C2634C91500F026CD /* FilmDetailsCollectionViewController.swift */,
 				E6FD35312630A7C400EC3A0C /* FilmsMapViewController.swift */,
 				E6FD353E2630C16900EC3A0C /* Films.storyboard */,
-				E6FD35432630C57C00EC3A0C /* FilmDetailsViewController.swift */,
 			);
 			path = NetflixFilmingLocationsApp;
 			sourceTree = "<group>";
@@ -195,11 +246,9 @@
 		E6FFA0C5262F37EB006099AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E6FFA0C6262F37FD006099AF /* CodableExtension.swift */,
-				E6FD351C2630922800EC3A0C /* FileManagerExtension.swift */,
+				E651516F2634D2B200F026CD /* Extensions */,
+				E65151662634D27E00F026CD /* Protocols */,
 				E6FD35212630A0D000EC3A0C /* WebService.swift */,
-				E6FD35572630D3B200EC3A0C /* Pagination.swift */,
-				E6FD355C2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift */,
 				E6FD35672631C45900EC3A0C /* ImageCache.swift */,
 			);
 			path = "Supporting Files";
@@ -308,11 +357,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6626A99263210340053CA42 /* LocationCell.xib in Resources */,
+				E601CBE92636068A0013E6F3 /* FilmCell.xib in Resources */,
 				E6FFA09F262F37BA006099AF /* LaunchScreen.storyboard in Resources */,
-				E6FD351826308E6400EC3A0C /* FilmCell.xib in Resources */,
+				E65151472634CB9400F026CD /* FilmDetailsHeaderCell.xib in Resources */,
+				E65151812634D6D900F026CD /* PlotCell.xib in Resources */,
 				E6FFA09C262F37BA006099AF /* Assets.xcassets in Resources */,
 				E6FFA09A262F37B8006099AF /* Main.storyboard in Resources */,
 				E6FD353F2630C16900EC3A0C /* Films.storyboard in Resources */,
+				E65151742634D54A00F026CD /* FilmLocationMapCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,19 +393,26 @@
 				E6FD350926308D4E00EC3A0C /* FilmsListViewController.swift in Sources */,
 				E6FD351D2630922800EC3A0C /* FileManagerExtension.swift in Sources */,
 				E6FD35682631C45900EC3A0C /* ImageCache.swift in Sources */,
+				E65151682634D29000F026CD /* ReusableView.swift in Sources */,
+				E65151792634D57400F026CD /* FilmLocationMapCell.swift in Sources */,
+				E65151542634CE9200F026CD /* NibLoadedView.swift in Sources */,
 				E6FFA0C7262F37FD006099AF /* CodableExtension.swift in Sources */,
-				E6FD355D2630D94E00EC3A0C /* CLLocationCoordinate2DExtension.swift in Sources */,
-				E6FD35442630C57C00EC3A0C /* FilmDetailsViewController.swift in Sources */,
+				E6626A94263210100053CA42 /* LocationCell.swift in Sources */,
 				E6FFA093262F37B8006099AF /* AppDelegate.swift in Sources */,
+				E65151622634D25900F026CD /* UICollectionViewExtension.swift in Sources */,
+				E651513D2634C91500F026CD /* FilmDetailsCollectionViewController.swift in Sources */,
 				E6FFA0D4262F382B006099AF /* Film.swift in Sources */,
 				E6FD35322630A7C400EC3A0C /* FilmsMapViewController.swift in Sources */,
-				E6FD350F26308DCC00EC3A0C /* FilmCell.swift in Sources */,
 				E6FFA095262F37B8006099AF /* SceneDelegate.swift in Sources */,
+				E65151862634D6F800F026CD /* PlotCell.swift in Sources */,
+				E601CBE42636067B0013E6F3 /* FilmCell.swift in Sources */,
 				E6FD35632631C17300EC3A0C /* ImdbFilm.swift in Sources */,
+				E651514C2634CC1C00F026CD /* FilmDetailsHeaderCell.swift in Sources */,
 				E6FD35222630A0D000EC3A0C /* WebService.swift in Sources */,
+				E65151422634C99900F026CD /* FilmDetailItem.swift in Sources */,
 				E6FD354D2630CA9100EC3A0C /* LocationAnnotation.swift in Sources */,
 				E6FFA0DC262F38C1006099AF /* FilmManager.swift in Sources */,
-				E6FD35582630D3B200EC3A0C /* Pagination.swift in Sources */,
+				E601CBC22635F7D10013E6F3 /* DetailHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

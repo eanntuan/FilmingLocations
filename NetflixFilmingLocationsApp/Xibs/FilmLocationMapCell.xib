@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FilmLocationMapCell" reuseIdentifier="FilmLocationMapCell" id="7xV-S2-e3K" customClass="FilmLocationMapCell" customModule="NetflixFilmingLocationsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="312"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Pmm-KW-8Yw">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="312"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sfD-4j-ORg">
+                        <rect key="frame" x="20" y="0.0" width="362" height="175"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="175" id="tdv-sf-d9G"/>
+                        </constraints>
+                    </mapView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2C-sc-vJT">
+                        <rect key="frame" x="20" y="185" width="362" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="776-ic-gQb">
+                        <rect key="frame" x="20" y="213" width="362" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="V2C-sc-vJT" firstAttribute="leading" secondItem="sfD-4j-ORg" secondAttribute="leading" id="7i5-DI-ogc"/>
+                    <constraint firstAttribute="trailing" secondItem="sfD-4j-ORg" secondAttribute="trailing" constant="20" id="99K-cd-vfG"/>
+                    <constraint firstItem="sfD-4j-ORg" firstAttribute="top" secondItem="Pmm-KW-8Yw" secondAttribute="top" id="AlU-VU-CRC"/>
+                    <constraint firstItem="776-ic-gQb" firstAttribute="leading" secondItem="V2C-sc-vJT" secondAttribute="leading" id="CUZ-XZ-mGX"/>
+                    <constraint firstItem="776-ic-gQb" firstAttribute="trailing" secondItem="V2C-sc-vJT" secondAttribute="trailing" id="JPL-w1-xD6"/>
+                    <constraint firstAttribute="trailing" secondItem="V2C-sc-vJT" secondAttribute="trailing" constant="20" id="Qne-4l-oBj"/>
+                    <constraint firstItem="776-ic-gQb" firstAttribute="top" secondItem="V2C-sc-vJT" secondAttribute="bottom" constant="7.5" id="YxP-AR-OSm"/>
+                    <constraint firstItem="sfD-4j-ORg" firstAttribute="leading" secondItem="Pmm-KW-8Yw" secondAttribute="leading" constant="20" id="bh3-Iz-GR6"/>
+                    <constraint firstItem="V2C-sc-vJT" firstAttribute="top" secondItem="sfD-4j-ORg" secondAttribute="bottom" constant="10" id="ekH-YD-O66"/>
+                    <constraint firstItem="V2C-sc-vJT" firstAttribute="trailing" secondItem="sfD-4j-ORg" secondAttribute="trailing" id="hmT-XJ-pq6"/>
+                    <constraint firstItem="V2C-sc-vJT" firstAttribute="leading" secondItem="Pmm-KW-8Yw" secondAttribute="leading" constant="20" id="vVc-k1-4a7"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <size key="customSize" width="402" height="312"/>
+            <connections>
+                <outlet property="addressLabel" destination="V2C-sc-vJT" id="nyc-I4-K7U"/>
+                <outlet property="funFactLabel" destination="776-ic-gQb" id="hTE-6g-E9r"/>
+                <outlet property="mapView" destination="sfD-4j-ORg" id="oKe-ew-iS9"/>
+            </connections>
+            <point key="canvasLocation" x="82.608695652173921" y="331.47321428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>

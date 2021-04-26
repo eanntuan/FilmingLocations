@@ -10,24 +10,11 @@ import Foundation
 struct ImdbFilm: Codable, Equatable {
   
   var title: String
-//  var year: String
-//  var rated: String?
-//  var released: String?
   var genre: String?
-//  var director: String?
-//  var writer: String?
-//  var actors: String?
-//  var plot: String?
-//  var language: String?
-//  var country: String?
-//  var awards: String?
+  var plot: String?
   var poster: String?
-//  var ratings: [Rating]?
   var imdbID: String?
   var imdbRating: String?
-//  var metascore: String?
-//  var type: String?
-//  var boxOffice: String?
   
   enum CodingKeys: String, CodingKey {
     case title = "Title"
@@ -35,12 +22,9 @@ struct ImdbFilm: Codable, Equatable {
     case imdbRating
     case imdbID
     case genre = "Genre"
+    case plot = "Plot"
   }
 
-  init() {
-    self.title = ""
-  }
-  
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     title = try container.decode(String.self, forKey: .title)
@@ -48,6 +32,7 @@ struct ImdbFilm: Codable, Equatable {
     imdbRating = try container.decode(String.self, forKey: .imdbRating)
     imdbID = try container.decode(String.self, forKey: .imdbID)
     genre = try container.decode(String.self, forKey: .genre)
+    plot = try container.decode(String.self, forKey: .plot)
   }
 
   static func == (lhs: ImdbFilm, rhs: ImdbFilm) -> Bool {

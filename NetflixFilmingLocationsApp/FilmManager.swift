@@ -8,13 +8,16 @@
 import Foundation
 import CoreLocation
 
-enum FilmSort: String, CaseIterable {
+enum FilmSort: CaseIterable {
+  case distance
   case title
   case newest
   case oldest
-  case distance
-  case director
-  case company
+}
+
+extension Notification.Name {
+  static let DidGetFilms = Notification.Name("DidGetFilms")
+  static let DidGetFilmDetails = Notification.Name("DidGetFilmDetails")
 }
 
 class FilmManager: NSObject, CLLocationManagerDelegate {
@@ -31,7 +34,7 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
   var films: [Film] {
     return distinctFilms.isEmpty ? cachedFilms : distinctFilms
   }
-
+  
   lazy var filmsFilePath: String = {
     let documents = FileManager.documentsDirectory
     return documents.appendingPathComponent("films").path
@@ -58,7 +61,7 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
         self.cachedFilms = result
       }
     }
-    WebService().getFilms { films, error  in
+    fetchFilmsFromBackend { films in
       if let films = films {
         self.newFilms = films
         self.getFilmTitleDict()
@@ -71,6 +74,26 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
     }
   }
   
+  func fetchFilmsFromBackend(_ completion: @escaping ([Film]?) -> Void ) {
+    guard let url = URL(string: WebService.baseUrlString) else {
+      completion(nil)
+      return
+    }
+    WebService.get([:], url: url) { data, error in
+      guard let data = data, error == nil else {
+        completion(nil)
+        return
+      }
+      do {
+        let response = try JSONDecoder.defaultDecoder.decode([Film].self, from: data)
+        completion(response)
+      } catch {
+        completion(nil)
+        print("\(#function): \(error)")
+      }
+    }
+  }
+  
   func getDistinctFilms() {
     for (_, value) in filmsDict {
       if let film = value.first {
@@ -78,6 +101,7 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
       }
     }
     self.distinctFilms = sortFilms(by: .distance)
+    NotificationCenter.default.post(name: .DidGetFilms, object: nil, userInfo: nil)
   }
   
   func getFilmTitleDict() {
@@ -85,11 +109,10 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
       readFilmTitleDictFilePath { result in
         if let result = result {
           filmsDict = result.filmTitleDict
-        } else {
-          makeFilmDict()
         }
       }
     }
+    makeFilmDict()
   }
   
   func makeFilmDict() {
@@ -113,7 +136,7 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
         imdbFilms = result
       }
     }
-
+    
     for film in self.distinctFilms {
       if let cachedFilm = cachedImdbFilms.filter( {$0.title == film.title} ).first {
         self.imdbFilmsDict[film.title] = cachedFilm
@@ -137,6 +160,7 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
         }
       }
     }
+    NotificationCenter.default.post(name: .DidGetFilmDetails, object: nil, userInfo: nil)
     writeImdbFilmsToFilePath(imdbFilms)
   }
   
@@ -144,14 +168,10 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
     switch type {
     case .title:
       return films.sorted(by: { $0.title < $1.title })
-    case .director:
-      return films.sorted(by: { $0.director > $1.director })
     case .newest:
       return films.sorted(by: { $0.releaseYear > $1.releaseYear })
     case .oldest:
       return films.sorted(by: { $0.releaseYear < $1.releaseYear })
-    case .company:
-      return films.sorted(by: { $0.productionCompany > $1.productionCompany })
     case .distance:
       return films.sorted(by: { $0.distanceToCurrentLocation < $1.distanceToCurrentLocation })
     }
@@ -168,17 +188,17 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
     }
   }
   
-  // FIXME
+  // Eventually combine these read/write functions into a protocol for concision
   func writeImdbFilmsToFilePath(_ films: [ImdbFilm]) {
-      do {
-          let data = try JSONEncoder.defaultEncoder.encode(films)
-          if FileManager.default.fileExists(atPath: imdbFilmsFilePath) {
-              try FileManager.default.removeItem(atPath: imdbFilmsFilePath)
-          }
-          try (data as NSData).write(toFile: imdbFilmsFilePath, options: .atomic)
-      } catch {
-          print("\(#function): \(error)")
+    do {
+      let data = try JSONEncoder.defaultEncoder.encode(films)
+      if FileManager.default.fileExists(atPath: imdbFilmsFilePath) {
+        try FileManager.default.removeItem(atPath: imdbFilmsFilePath)
       }
+      try (data as NSData).write(toFile: imdbFilmsFilePath, options: .atomic)
+    } catch {
+      print("\(#function): \(error)")
+    }
   }
   
   func readImdbFilmsFromFilepath(_ completion: ([ImdbFilm]?) -> Void) {
@@ -194,15 +214,15 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
   }
   
   func writeFilmsToFilePath(_ films: [Film]) {
-      do {
-          let data = try JSONEncoder.defaultEncoder.encode(films)
-          if FileManager.default.fileExists(atPath: filmsFilePath) {
-              try FileManager.default.removeItem(atPath: filmsFilePath)
-          }
-          try (data as NSData).write(toFile: filmsFilePath, options: .atomic)
-      } catch {
-          print("\(#function): \(error)")
+    do {
+      let data = try JSONEncoder.defaultEncoder.encode(films)
+      if FileManager.default.fileExists(atPath: filmsFilePath) {
+        try FileManager.default.removeItem(atPath: filmsFilePath)
       }
+      try (data as NSData).write(toFile: filmsFilePath, options: .atomic)
+    } catch {
+      print("\(#function): \(error)")
+    }
   }
   
   func readFilmsFromFilepath(_ completion: ([Film]?) -> Void) {
@@ -220,15 +240,15 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
   func writeFilmTitleDictFilePath(_ filmTitleDict: [String: [Film]]) {
     var cache = FilmTitleToLocationsCache()
     cache.filmTitleDict = filmTitleDict
-      do {
-          let data = try JSONEncoder.defaultEncoder.encode(cache)
-          if FileManager.default.fileExists(atPath: filmTitlesFilePath) {
-              try FileManager.default.removeItem(atPath: filmTitlesFilePath)
-          }
-          try (data as NSData).write(toFile: filmTitlesFilePath, options: .atomic)
-      } catch {
-          print("\(#function): \(error)")
+    do {
+      let data = try JSONEncoder.defaultEncoder.encode(cache)
+      if FileManager.default.fileExists(atPath: filmTitlesFilePath) {
+        try FileManager.default.removeItem(atPath: filmTitlesFilePath)
       }
+      try (data as NSData).write(toFile: filmTitlesFilePath, options: .atomic)
+    } catch {
+      print("\(#function): \(error)")
+    }
   }
   
   func readFilmTitleDictFilePath(_ completion: (FilmTitleToLocationsCache?) -> Void) {
@@ -245,19 +265,4 @@ class FilmManager: NSObject, CLLocationManagerDelegate {
     }
   }
   
-//  func getMoreMovieInfo(for title: String, _ completion: @escaping (ImdbFilm?) -> Void) {
-//    guard let url = URL(string: "\(WebService.movieInfoUrl)") else { return }
-//    WebService.get(title, url: url) { data, error in
-//      guard let data = data else { return }
-//      do {
-//        let responseData = try JSONDecoder().decode(ImdbFilm.self, from: data)
-//        print("SUCCESS getting movie info for: \(title)")
-//        completion(responseData)
-//      } catch {
-//        completion(nil)
-//        print("error getting movie info for: \(title)")
-//      }
-//    }
-//  }
-
 }

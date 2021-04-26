@@ -37,13 +37,24 @@ class FilmsMapViewController: UIViewController {
     }
   }
   
+  var filmObserver: Any?
+  
   // MARK: Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     mapView.delegate = self
+    filmObserver = NotificationCenter.default.addObserver(forName: .DidGetFilms, object: nil, queue: .main) { [weak self] (_) in
+        self?.reloadData()
+    }
     films = FilmManager.shared.films
+    films.isEmpty ? FilmManager.shared.getFilms() : nil
     setupSearchBar()
+  }
+  
+  func reloadData() {
+    films = FilmManager.shared.films
+    mapView.reloadInputViews()
   }
   
   fileprivate func addAnnotationsToMap(_ films: [Film]) {
@@ -96,8 +107,14 @@ extension FilmsMapViewController: MKMapViewDelegate {
   
   func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
     guard let annotation = view.annotation as? LocationAnnotation else { return }
-    if let filmsDetailVC = UIStoryboard(name: "Films", bundle: nil).instantiateViewController(withIdentifier: "FilmDetailsViewController") as? FilmDetailsViewController, let index = annotation.atIndex {
-      filmsDetailVC.film = films[index]
+    if let filmsDetailVC = UIStoryboard(name: "Films", bundle: nil).instantiateViewController(withIdentifier: "FilmDetailsCollectionViewController") as? FilmDetailsCollectionViewController, let index = annotation.atIndex {
+      let film = films[index]
+      filmsDetailVC.film = film
+      filmsDetailVC.image = .defaultImageIcon
+      
+      if let details = FilmManager.shared.imdbFilmsDict[film.title] {
+        filmsDetailVC.filmDetails = details
+      }
       self.navigationController?.pushViewController(filmsDetailVC, animated: true)
     }
   }

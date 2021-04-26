@@ -8,20 +8,7 @@
 import Foundation
 import MapKit
 
-struct FilmLocation: Codable, Equatable {
-  var actors: [String]
-  var longitude: Float
-  var title: String
-  var locations: String
-  var latitude: Float
-  var writers: [String]?
-  var director: String
-  var productionCompany: String
-  var releaseYear: String
-  var funFacts: String?
-}
-
-struct Film: Equatable {
+struct Film: Codable, Equatable {
   var actors: [String]
   var longitude: Float
   var title: String
@@ -37,9 +24,7 @@ struct Film: Equatable {
   var poster: String?
   var imdbID: String?
   var imdbRating: String?
-  
-  var image: UIImage?
-  
+    
   var actorsString: String {
     return actors.joined(separator:", ")
   }
@@ -77,16 +62,10 @@ struct Film: Equatable {
 
 struct FilmTitleToLocationsCache: Codable {
   let dateCached: Date
-  var filmTitleDict: [String: [FilmLocation]]
+  var filmTitleDict: [String: [Film]]
   
   init() {
     self.filmTitleDict = [:]
     self.dateCached = Date()
   }
-}
-
-struct Location {
-  var locationCoordinate: CLLocation?
-  var coordinate2D: CLLocationCoordinate2D?
-  var locationName: String?
 }
