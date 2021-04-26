@@ -1,4 +1,4 @@
-# Netflix Filming Locations App
+# Netflix GO App
 ### Eann Tuan
 
 ## How to run the project
