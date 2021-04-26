@@ -36,11 +36,12 @@ This were assumptions I made, but would have asked more questions to the PM to b
 About 4 - 5 hours over multiple days (about an hour or so each day in the morning this past week). The last hour was mostly spent doing documentation, code cleanup, etc.
 
 ## Questions I would've asked
-1. How do we want to display a film that has more than 1 location? Should we consolidate into one cell?
+1. How do we want to display a film that has more than 1 location? Should we consolidate into one cell? I assumed yes.
 2. Will users want to sort their list of films by any criteria? I assumed that they might want to sort by distance, title, newest, oldest.
-3. Do we want to default to the Map or List view on load?
+3. Do we want to default to the Map or List view on load? For now, I defaulted to the Map view.
 4. What search criteria do we want to provide? For now, I allowed the user to search by the film title and actor. Maybe they wanted to see all of the movies with Jennifer Aniston in them, but I'm sure there are other uses cases!
 5. How often is this data being refreshed? I'm assuming not very often, otherwise I would've put a pull to refresh spinner.
+6. Do we want to support landscape mode? I'm assuming no.
 
 ## Refactors
 1. Setup pagination and lazy loading to improve performance. This would also include infinite scrolling and animations on the poster image, similar to how Netflix does it in their iOS app.
@@ -61,8 +62,8 @@ About 4 - 5 hours over multiple days (about an hour or so each day in the mornin
 1. Leverage OMDB api more to display more info (i.e. different ratings, search by genre, etc)
 2. UI enhancements on Film Details page - maybe include a trailer of the movie on auto play, like Netflix's app
 3. Use colors to display the rating system - right now the app is very black and white. I'd like to add some more color and visuals, such as green for good rating, red for bad rating.
+4. Create a library of places "visited." Potentially turn this into a Pokemon Go app where users can crowdsource and see where their friends have visited.
 
 ## Testing
 1. Bad network - what happens when there is no internet connection? Right now the app doesn't display anything, but some sort of safeguard for refetching the film data.
 2. Error handling - adding support for different error states like loading, empty, error, etc
-3. 
